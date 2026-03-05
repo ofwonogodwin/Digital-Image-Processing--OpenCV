@@ -244,10 +244,10 @@ def task8():
     # Larger kernel = more blur, less detail
 
 if __name__ == "__main__":
-    # task1()
-    # task2()
-    # task4()
-    # task5()
-    # task6()
-    #task7()
+    task1()
+    task2()
+    task4()
+    task5()
+    task6()
+    task7()
     task8()
