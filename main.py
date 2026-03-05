@@ -1,5 +1,10 @@
+# Godwin Ofwono
+# SEP23/BSE/3344U
+
 import cv2
 import numpy as np
+
+# Task 1: Image Loading and Analysi
 
 def task1():
     try:
@@ -9,18 +14,18 @@ def task1():
             raise FileNotFoundError("Image not found!")
 
         height, width, channels = image.shape
-        print("Dimensions:", image.shape)
+        print("Image Dimensions:", image.shape)
 
         print("Data Type:", image.dtype)
 
         total_pixels = height * width
         print("Total Pixels:", total_pixels)
 
-        print("Min Pixel Value:", image.min())
-        print("Max Pixel Value:", image.max())
+        print("Minimum Pixel Value:", image.min())
+        print("Maximum Pixel Value:", image.max())
 
         center_pixel = image[height//2, width//2]
-        print("Center Pixel (BGR):", center_pixel)
+        print("Center Pixel(BGR) of Center Pixel:", center_pixel)
 
     except Exception as e:
         print("Error:", e)
