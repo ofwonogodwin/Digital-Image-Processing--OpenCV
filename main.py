@@ -4,7 +4,7 @@
 import cv2
 import numpy as np
 
-# Task 1: Image Loading and Analysi
+# Task 1: Image Loading and Analysis
 
 def task1():
     try:
@@ -30,7 +30,7 @@ def task1():
     except Exception as e:
         print("Error:", e)
 
-# Task 2: Drawing the Target Pattern
+# Task 2: Geometric Pattern Creation
 def task2():
     img = np.zeros((600,600,3), dtype=np.uint8)
 
