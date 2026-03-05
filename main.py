@@ -114,7 +114,8 @@ def task4():
     # HSV best for red object detection (separates hue from lighting)
     # LAB better for skin detection (separates lightness from color)
 
-#Task 5
+#Task 5 : Image Resizing and Scaling
+
 def task5():
     image = cv2.imread("Man.jpeg")
     h, w = image.shape[:2]
@@ -174,7 +175,7 @@ def task6():
 
     cv2.imwrite("task6_rotations.jpg", final)
 
-# Task 7
+# Task 7 : Image Cropping Techniques
 def task7():
     image = cv2.imread("Man.jpeg")
     h, w = image.shape[:2]
@@ -201,7 +202,7 @@ def task7():
 
             cv2.imwrite(f"task7_grid/grid_row{r+1}_col{c+1}.jpg", cell)
 
-# Task 8
+# Task 8 : Bluurring Techniques Comparison
 def add_noise(image, amount=0.02):
     noisy = image.copy()
     h, w = image.shape[:2]
