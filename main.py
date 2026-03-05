@@ -1,8 +1,11 @@
 # Godwin Ofwono
 # SEP23/BSE/3344U
 
+from email.mime import image
+
 import cv2
 import numpy as np
+
 
 # Task 1: Image Loading and Analysis
 
@@ -57,8 +60,52 @@ def task2():
 
     cv2.imwrite("task2_target.jpg", img)
 
+# Task 3: Color Channel Manipulation 
+#  
+    # Original Image
+    image = cv2.imread("Man.jpeg")
+
+
+    b, g, r = cv2.split(image)
+
+    #Image with Only Red Channel
+    zeros = np.zeros_like(b)
+    red_img = cv2.merge([zeros, zeros, r])
+
+    cv2.imwrite("task3_red_channel.jpg", red_img)
+
+    #Image with Only Green Channel
+
+    zeros = np.zeros_like(b)
+    green_img = cv2.merge([zeros, g, zeros])
+
+    cv2.imwrite("task3_green_channel.jpg", green_img)
+
+    #Image with Only Blue Channel
+    zeros = np.zeros_like(b)
+    blue_img = cv2.merge([b, zeros, zeros])
+
+    cv2.imwrite("task3_blue_channel.jpg", blue_img)
+
+    # reconstructing back to the original image
+    reconstructed_img = cv2.merge([b, g, r])
+    cv2.imwrite("task3_reconstructed.jpg", reconstructed_img)
+
+# Task 4 : Color Space Conversion
+
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+
+gray_3ch = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+
+top = np.hstack((image, gray_3ch))
+bottom = np.hstack((hsv, lab))
+combined = np.vstack((top, bottom))
+
+cv2.imwrite("task4_color_spaces.jpg", combined)
+
 
 if __name__ == "__main__":
-    task1()
+    # task1()
     task2()
-    #task3()
