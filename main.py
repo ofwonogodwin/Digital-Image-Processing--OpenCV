@@ -246,8 +246,8 @@ def task8():
 if __name__ == "__main__":
     # task1()
     # task2()
-    task4()
-    # task5()
+    # task4()
+    task5()
     # task6()
     # task7()
     # task8()
