@@ -249,5 +249,5 @@ if __name__ == "__main__":
     # task4()
     # task5()
     # task6()
-    task7()
-    # task8()
+    #task7()
+    task8()
