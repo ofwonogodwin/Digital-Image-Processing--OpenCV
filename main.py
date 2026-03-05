@@ -30,8 +30,35 @@ def task1():
     except Exception as e:
         print("Error:", e)
 
+# Task 2: Drawing the Target Pattern
+def task2():
+    img = np.zeros((600,600,3), dtype=np.uint8)
+
+    center = (300, 300)
+
+    # Outer red circle
+    cv2.circle(img, center, 250, (0,0,255), 5)
+
+    # Middle green circle
+    cv2.circle(img, center, 150, (0,255,0), 5)
+
+    # Inner blue circle (filled)
+    cv2.circle(img, center, 50, (255,0,0), -1)
+
+    # Diagonal line
+    cv2.line(img, (0,0), (600,600), (255,255,255), 2)
+
+    # Horizontal line
+    cv2.line(img, (0,300), (600,300), (255,255,255), 2)
+
+    cv2.putText(img, "TARGET", (200,580),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1, (255,255,255), 2)
+
+    cv2.imwrite("task2_target.jpg", img)
+
 
 if __name__ == "__main__":
     task1()
-    #task2()
+    task2()
     #task3()
